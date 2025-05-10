@@ -3,6 +3,7 @@ import { z } from "zod";
 
 const envVariables = z.object({
 	MODE: z.enum(["dev", "test", "prod"]).default("dev"),
+	CONNECTION_STRING: z.string().default("postgres://postgres:postgres@localhost:5432/postgres"),
 	PORT: z.coerce.number().default(80),
 	BINDINGS: z.object({}).default({}),
 	VARIABLES: z.object({}).default({}),
